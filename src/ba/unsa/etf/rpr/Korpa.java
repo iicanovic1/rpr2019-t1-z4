@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Korpa {
 
-    ArrayList<Artikl> artikliSupermarketa = new ArrayList<Artikl>(50);
+    ArrayList<Artikl> artikliKorpe = new ArrayList<>(50);
 
     public boolean dodajArtikl(Artikl a) {
-        artikliSupermarketa.add(a);
+        artikliKorpe.add(a);
         return true;
     }
 
-    public ArrayList<Artikl> getArtikli() {
-        return artikliSupermarketa;
+    public Artikl[] getArtikli() {
+        return artikliKorpe.toArray(new Artikl[0]);
     }
 
     public Artikl izbaciArtiklSaKodom(String kod) {
-        for (int i=0; i<artikliSupermarketa.size()-1; i++){
-            if(artikliSupermarketa.get(i).kodArtikla.equals(kod)){
-                Artikl zaIzbaciti = artikliSupermarketa.get(i);
-                artikliSupermarketa.remove(i);
+        for (int i = 0; i< artikliKorpe.size(); i++){
+            if(artikliKorpe.get(i).kodArtikla.equals(kod)){
+                Artikl zaIzbaciti = artikliKorpe.get(i);
+                artikliKorpe.remove(i);
                 return zaIzbaciti;
             }
         }
@@ -28,9 +28,8 @@ public class Korpa {
 
     public int dajUkupnuCijenuArtikala() {
         int suma = 0;
-        for (int i=0; i<artikliSupermarketa.size()-1; i++ ){
-            if (artikliSupermarketa.get(i) != null)
-                suma +=  artikliSupermarketa.get(i).cijenaArtikla;
+        for (Artikl artikl : artikliKorpe) {
+            suma += artikl.cijenaArtikla;
         }
         return suma;
     }

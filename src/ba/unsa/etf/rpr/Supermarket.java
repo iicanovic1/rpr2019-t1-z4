@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Supermarket {
 
 
-    ArrayList<Artikl> artikliSupermarketa = new ArrayList<Artikl>(1000);
+    ArrayList<Artikl> artikliSupermarketa = new ArrayList<>(1000);
 
     void dodajArtikl (Artikl novi){
         artikliSupermarketa.add(novi);
     }
 
-    public ArrayList<Artikl> getArtikli() {
-        return artikliSupermarketa;
+    public Artikl[] getArtikli() {
+        return artikliSupermarketa.toArray(new Artikl[0]);
     }
 
     public Artikl izbaciArtiklSaKodom(String kod) {
