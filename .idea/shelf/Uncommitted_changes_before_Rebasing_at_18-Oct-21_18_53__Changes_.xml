@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]" date="1634575996379" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Rebasing at 18-Oct-21 18:53 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Main.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Korpa.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Korpa.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Supermarket.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Supermarket.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Artikl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Artikl.class" />
+  </binary>
+</changelist>

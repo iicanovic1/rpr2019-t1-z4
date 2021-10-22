@@ -1,0 +1,334 @@
+Index: test/ba/unsa/etf/rpr/SupermarketTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/ba/unsa/etf/rpr/SupermarketTest.java b/test/ba/unsa/etf/rpr/SupermarketTest.java
+new file mode 100644
+--- /dev/null	(date 1634931294773)
++++ b/test/ba/unsa/etf/rpr/SupermarketTest.java	(date 1634931294773)
+@@ -0,0 +1,26 @@
++package ba.unsa.etf.rpr;
++
++import org.junit.jupiter.api.Test;
++
++import static org.junit.jupiter.api.Assertions.*;
++
++class SupermarketTest {
++
++    @Test
++    void dodajArtiklPlusGetArtikli() {
++        Supermarket supermarket = new Supermarket();
++        supermarket.dodajArtikl(new Artikl("Biciklo", 1000, "1"));
++        assertEquals(supermarket.getArtikli()[0].nazivArtikla, "Biciklo");
++    }
++
++
++    @Test
++    void izbaciArtiklSaKodom() {
++        Supermarket supermarket = new Supermarket();
++        supermarket.dodajArtikl(new Artikl("Biciklo", 1000, "1"));
++        supermarket.dodajArtikl(new Artikl("Traktor", 2000, "3"));
++        supermarket.izbaciArtiklSaKodom("1");
++        assertEquals(supermarket.getArtikli()[0].nazivArtikla, "Traktor");
++        assertEquals( supermarket.izbaciArtiklSaKodom("5").nazivArtikla,null );
++    }
++}
+\ No newline at end of file
+Index: test/ba/unsa/etf/rpr/KorpaTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/ba/unsa/etf/rpr/KorpaTest.java b/test/ba/unsa/etf/rpr/KorpaTest.java
+new file mode 100644
+--- /dev/null	(date 1634931753978)
++++ b/test/ba/unsa/etf/rpr/KorpaTest.java	(date 1634931753978)
+@@ -0,0 +1,33 @@
++package ba.unsa.etf.rpr;
++
++import org.junit.jupiter.api.Test;
++
++import static org.junit.jupiter.api.Assertions.*;
++
++class KorpaTest {
++
++    @Test
++    void dodajArtiklPlusGetArtikli() {
++        Korpa korpa = new Korpa();
++        korpa.dodajArtikl(new Artikl("Traktor", 5000, "6"));
++        assertEquals(korpa.getArtikli()[0].nazivArtikla, "Traktor");
++
++    }
++
++    @Test
++    void izbaciArtiklSaKodom() {
++        Korpa korpa = new Korpa();
++        korpa.dodajArtikl(new Artikl("Traktor", 5000, "6"));
++        korpa.izbaciArtiklSaKodom("6");
++        assertEquals(korpa.getArtikli().length, 0);
++        assertEquals(korpa.izbaciArtiklSaKodom("6").nazivArtikla, null);
++    }
++
++    @Test
++    void dajUkupnuCijenuArtikala() {
++        Korpa korpa = new Korpa();
++        korpa.dodajArtikl(new Artikl("Traktor", 5000, "6"));
++        korpa.dodajArtikl(new Artikl("Auto", 2000, "8"));
++        assertEquals(korpa.dajUkupnuCijenuArtikala(), 7000);
++    }
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"032d637a-0eb9-4861-9d87-72adda79ecc8\" name=\"Changes\" comment=\"završeno, ostali detalji\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Korpa.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Korpa.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Supermarket.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Supermarket.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/ba/unsa/etf/rpr/Korpa.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ba/unsa/etf/rpr/Korpa.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/ba/unsa/etf/rpr/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ba/unsa/etf/rpr/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/ba/unsa/etf/rpr/Supermarket.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ba/unsa/etf/rpr/Supermarket.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1zgYMVd7ch2nYbc7ltaIGzcMmKH\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"editor.preferences.fonts.default\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"ba.unsa.etf.rpr.Main\" />\r\n      <module name=\"rpr2019-t1-z4\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"032d637a-0eb9-4861-9d87-72adda79ecc8\" name=\"Changes\" comment=\"\" />\r\n      <created>1634571154266</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1634571154266</updated>\r\n      <workItem from=\"1634571157650\" duration=\"4735000\" />\r\n      <workItem from=\"1634908190608\" duration=\"1023000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"završeno, ostali detalji\">\r\n      <created>1634576060145</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1634576060145</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"završeno, ostali detalji\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"završeno, ostali detalji\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Supermarket.java</url>\r\n          <line>27</line>\r\n          <properties class=\"ba.unsa.etf.rpr.Supermarket\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8e8a359ffefba99d2b927ddbaf96b02a0dac47a5)
++++ b/.idea/workspace.xml	(date 1634931959776)
+@@ -1,20 +1,28 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="032d637a-0eb9-4861-9d87-72adda79ecc8" name="Changes" comment="završeno, ostali detalji">
++    <list default="true" id="032d637a-0eb9-4861-9d87-72adda79ecc8" name="Changes" comment="zadatak finaliziran i spreman za Tutorijal 2">
++      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/KorpaTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/MainTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/SupermarketTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Korpa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Korpa.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Supermarket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Supermarket.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Korpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Korpa.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Supermarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Supermarket.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/rpr2019-t1-z4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpr2019-t1-z4.iml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="CoverageOptionsProvider">
++    <option name="myAddOrReplace" value="1" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="JUnit5 Test Class" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+@@ -24,16 +32,30 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="Downloaded.Files.Path.Enabled" value="false" />
++    <property name="Repository.Attach.Annotations" value="false" />
++    <property name="Repository.Attach.JavaDocs" value="false" />
++    <property name="Repository.Attach.Sources" value="false" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
++    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+     <property name="project.structure.last.edited" value="Modules" />
+     <property name="project.structure.proportion" value="0.0" />
+     <property name="project.structure.side.proportion" value="0.2" />
+     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+   </component>
+-  <component name="RunManager">
++  <component name="RecentsManager">
++    <key name="CreateTestDialog.Recents.Supers">
++      <recent name="" />
++    </key>
++    <key name="CreateTestDialog.RecentsKey">
++      <recent name="ba.unsa.etf.rpr" />
++    </key>
++  </component>
++  <component name="RunManager" selected="JUnit.KorpaTest">
+     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.Main" />
+       <module name="rpr2019-t1-z4" />
+@@ -41,6 +63,42 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="KorpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="rpr2019-t1-z4" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
++      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.KorpaTest" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="SupermarketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="rpr2019-t1-z4" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
++      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.SupermarketTest" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="JUnit.KorpaTest" />
++        <item itemvalue="JUnit.SupermarketTest" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -51,7 +109,8 @@
+       <option name="presentableId" value="Default" />
+       <updated>1634571154266</updated>
+       <workItem from="1634571157650" duration="4735000" />
+-      <workItem from="1634908190608" duration="1023000" />
++      <workItem from="1634908190608" duration="1416000" />
++      <workItem from="1634929967275" duration="1975000" />
+     </task>
+     <task id="LOCAL-00001" summary="završeno, ostali detalji">
+       <created>1634576060145</created>
+@@ -60,7 +119,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1634576060145</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="zadatak finaliziran i spreman za Tutorijal 2">
++      <created>1634909561822</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1634909561822</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -80,7 +146,8 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="završeno, ostali detalji" />
+-    <option name="LAST_COMMIT_MESSAGE" value="završeno, ostali detalji" />
++    <MESSAGE value="zadatak finaliziran i spreman za Tutorijal 2" />
++    <option name="LAST_COMMIT_MESSAGE" value="zadatak finaliziran i spreman za Tutorijal 2" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -96,4 +163,12 @@
+       </breakpoints>
+     </breakpoint-manager>
+   </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/rpr2019_t1_z4$KorpaTest.ic" NAME="KorpaTest Coverage Results" MODIFIED="1634931756473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++      <FILTER>ba.unsa.etf.rpr.*</FILTER>
++    </SUITE>
++    <SUITE FILE_PATH="coverage/rpr2019_t1_z4$SupermarketTest.ic" NAME="SupermarketTest Coverage Results" MODIFIED="1634931297980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++      <FILTER>ba.unsa.etf.rpr.*</FILTER>
++    </SUITE>
++  </component>
+ </project>
+\ No newline at end of file
+Index: rpr2019-t1-z4.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/rpr2019-t1-z4.iml b/rpr2019-t1-z4.iml
+--- a/rpr2019-t1-z4.iml	(revision 8e8a359ffefba99d2b927ddbaf96b02a0dac47a5)
++++ b/rpr2019-t1-z4.iml	(date 1634930338463)
+@@ -4,8 +4,35 @@
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
+       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library" scope="TEST">
++      <library name="JUnit4">
++        <CLASSES>
++          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library" scope="TEST">
++      <library name="JUnit5.7.0">
++        <CLASSES>
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.7.0/junit-jupiter-5.7.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.7.0/junit-jupiter-params-5.7.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1634930024013)
++++ b/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53__Changes_.xml	(date 1634930024013)
+@@ -0,0 +1,24 @@
++<changelist name="Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]" date="1634575996379" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Rebasing at 18-Oct-21 18:53 [Changes]" />
++  <binary>
++    <option name="BEFORE_PATH" />
++    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Main.class" />
++    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Main.class" />
++  </binary>
++  <binary>
++    <option name="BEFORE_PATH" />
++    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Korpa.class" />
++    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Korpa.class" />
++  </binary>
++  <binary>
++    <option name="BEFORE_PATH" />
++    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Supermarket.class" />
++    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Supermarket.class" />
++  </binary>
++  <binary>
++    <option name="BEFORE_PATH" />
++    <option name="AFTER_PATH" value="out/production/rpr2019-t1-z4/ba/unsa/etf/rpr/Artikl.class" />
++    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_18-Oct-21_18_53_[Changes]/Artikl.class" />
++  </binary>
++</changelist>
+\ No newline at end of file
